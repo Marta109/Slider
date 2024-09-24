@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #03071e;
+}
+
+.title {
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 35px;
+  color: #646cff;
+  background-color: #101730;
+  width: 200px;
+  box-shadow: 0 0 20px #646cff;
+  border-radius: 10px;
+  border-color: #646cff;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 80%;
+  box-shadow: 0 0 20px #646cff;
+  border-radius: 10px;
+  border-color: #646cff;
+}
+
+.slider .slide {
+  flex: 1;
+  height: 100%;
+  margin: 0.2rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  transition: 2s all linear;
+  position: relative;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 5px #646cff;
+  border-radius: 1rem;
+}
+.slider .slide h3 {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  transition: 2s opacity linear;
+  opacity: 0;
+  font-weight: bold;
+  line-height: 35px;
+  color: #646cff;
+}
+
+.slider .slide.active {
+  border-radius: 1rem;
+  flex: 10;
+  box-shadow: 0 0 40px #e6860a;
+  border-radius: 1rem;
+}
+.slider .slide.active h3 {
+  opacity: 1;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #d1d1d1;
+  font-size: 40px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.arrow.arrow-right {
+  right: 5%;
+}
+
+.arrow.arrow-left {
+  left: 5%;
+}
+
+.arrow:hover {
+  color: #646cff;
+  background-color: rgba(28, 38, 66, 0.4980392157);
+  box-shadow: 0 0 10px #454ef8;
+}
+
+.sliderControllerWrapper {
+  position: absolute;
+  bottom: -30px;
+  padding: 10px;
+}
+
+.sliderControllerWrapper .controller {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.sliderControllerWrapper .controller:checked + label {
+  box-shadow: 0 0 0 2px #1b263b, 0 0 18px #646cff;
+  background-color: #d1d1d1;
+}
+
+.sliderControllerWrapper label {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border: solid 2px #646cff;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  transition-duration: 0.4s;
+  box-shadow: 0 0 10px #646cff;
+  margin-left: 20px;
+}
